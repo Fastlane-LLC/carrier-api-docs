@@ -1126,7 +1126,131 @@ would appear as <code>undefined</code> when parsed.</p>
 <td>The LossExpress UUID associated with the claim</td>
 </tr>
 </tbody></table>
-<h2 id='create-claim'>Create Claim</h2><h2 id='search-claims'>Search Claims</h2><h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='create-claim'>Create Claim</h2>
+<blockquote>
+<p>Create Claim Response:</p>
+
+<p><code>STATUS 201</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This route creates a claim in LossExpress, which can be used to generate requests. Please note that our billing may currently or in the future consider all claims in our system, so be sure to only add claims that will eventually be worked on by us to avoid excess charges.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://.lossexpress.com/claims</code></p>
+<h3 id='request-body'>Request Body</h3>
+<p>This route accepts a JSON payload of an object comprising of:</p>
+
+<table><thead>
+<tr>
+<th>Body Parameter</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountNumber</td>
+<td>The customer&#39;s account number for the loan associated with the claim</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>adjusterName</td>
+<td>The primary adjuster for the claim</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>adjusterEmailAddress</td>
+<td>The email address associated with the primary adjuster for the claim</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>adjusterPhoneNumber</td>
+<td>The phone number associated with the primary adjuster for the claim</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>causeOfLoss</td>
+<td>The cause of loss listed on the claim. These causes can be one of the following: &quot;Single-Vehicle Collision&quot;, &quot;Multi-Vehicle Collision&quot;, &quot;Wind/Hail&quot;, &quot;Fire&quot;, &quot;Flood&quot;, &quot;Vandalism&quot;, &quot;Theft&quot;, &quot;Other&quot;</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>claimNumber</td>
+<td>The claim number as noted by the carrier</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>dateOfLoss</td>
+<td>The date the loss occurred</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>deductible</td>
+<td>The current deductible for the payoff</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>financeType</td>
+<td>Either &quot;Retail&quot; or &quot;Lease&quot;</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>insurerType</td>
+<td>Either &quot;First Party&quot; or &quot;Third Party&quot;</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>lenderName</td>
+<td>The lender&#39;s name</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>odometer</td>
+<td>The mileage on the vehicle associated with the claim</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>ownersName</td>
+<td>The vehicle owner&#39;s name</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>ownersPhoneNumber</td>
+<td>The vehicle owner&#39;s phone number</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>ownersRetained</td>
+<td>Whether the owner is retaining the vehicle (boolean)</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>ownersStreetAddress</td>
+<td>The full address of the vehicle owner</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>settlementAmount</td>
+<td>The settlement amount for the claim</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>titleRemittanceAddress</td>
+<td>The full address that the vehicle title should be sent to</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>vehicleLocation</td>
+<td>The full address where the vehicle is located, if different from the titleRemittanceAddress</td>
+<td>N</td>
+</tr>
+<tr>
+<td>vin</td>
+<td>The Vehicle Identification Number for the vehicle on the claim</td>
+<td>Y</td>
+</tr>
+</tbody></table>
+<h2 id='search-claims'>Search Claims</h2><h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -1155,7 +1279,7 @@ would appear as <code>undefined</code> when parsed.</p>
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -1194,7 +1318,7 @@ would appear as <code>undefined</code> when parsed.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
