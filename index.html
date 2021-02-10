@@ -384,13 +384,56 @@
                     <a href="#create-claim" class="toc-h2 toc-link" data-title="Create Claim">Create Claim</a>
                   </li>
                   <li>
+                    <a href="#update-claim" class="toc-h2 toc-link" data-title="Update Claim">Update Claim</a>
+                  </li>
+                  <li>
                     <a href="#search-claims" class="toc-h2 toc-link" data-title="Search Claims">Search Claims</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#documents" class="toc-h1 toc-link" data-title="Documents">Documents</a>
+              <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#add-document-to-claim" class="toc-h2 toc-link" data-title="Add Document to Claim">Add Document to Claim</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#payoff-requests" class="toc-h1 toc-link" data-title="Payoff Requests">Payoff Requests</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-payoff-request" class="toc-h2 toc-link" data-title="Create Payoff Request">Create Payoff Request</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#cancel-payoff-request" class="toc-h2 toc-link" data-title="Cancel Payoff Request">Cancel Payoff Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#letter-of-guarantee-requests" class="toc-h1 toc-link" data-title="Letter of Guarantee Requests">Letter of Guarantee Requests</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-letter-of-guarantee-request" class="toc-h2 toc-link" data-title="Create Letter of Guarantee Request">Create Letter of Guarantee Request</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-letter-of-guarantee-request" class="toc-h2 toc-link" data-title="Cancel Letter of Guarantee Request">Cancel Letter of Guarantee Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#direct-messages" class="toc-h1 toc-link" data-title="Direct Messages">Direct Messages</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-direct-message" class="toc-h2 toc-link" data-title="Create Direct Message">Create Direct Message</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#settlement-counter" class="toc-h1 toc-link" data-title="Settlement Counter">Settlement Counter</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#accept-or-dispute-counter" class="toc-h2 toc-link" data-title="Accept or Dispute Counter">Accept or Dispute Counter</a>
                   </li>
               </ul>
           </li>
@@ -1250,37 +1293,18 @@ would appear as <code>undefined</code> when parsed.</p>
 <td>Y</td>
 </tr>
 </tbody></table>
-<h2 id='search-claims'>Search Claims</h2><h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+<h2 id='update-claim'>Update Claim</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Update Claim response body:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...claim</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">(with</span><span class="w"> </span><span class="err">updated</span><span class="w"> </span><span class="err">claim</span><span class="w"> </span><span class="err">info)</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>This route allows for updating a claim. It is recommended that you only pass in data that has been changed, as opposed to a full object payload. This is recommended to reduce the size and complexity of <code>claim-updated</code> activities.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code>PUT https://.lossexpress.com/claims/{claimId}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1289,37 +1313,160 @@ would appear as <code>undefined</code> when parsed.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h3 id='request-body-2'>Request Body</h3>
+<p>This route accepts a JSON payload of an object comprising of:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+<table><thead>
+<tr>
+<th>Body Parameter</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountNumber</td>
+<td>The customer&#39;s account number for the loan associated with the claim</td>
+<td>N</td>
+</tr>
+<tr>
+<td>adjusterName</td>
+<td>The primary adjuster for the claim</td>
+<td>N</td>
+</tr>
+<tr>
+<td>adjusterEmailAddress</td>
+<td>The email address associated with the primary adjuster for the claim</td>
+<td>N</td>
+</tr>
+<tr>
+<td>adjusterPhoneNumber</td>
+<td>The phone number associated with the primary adjuster for the claim</td>
+<td>N</td>
+</tr>
+<tr>
+<td>causeOfLoss</td>
+<td>The cause of loss listed on the claim. These causes can be one of the following: &quot;Single-Vehicle Collision&quot;, &quot;Multi-Vehicle Collision&quot;, &quot;Wind/Hail&quot;, &quot;Fire&quot;, &quot;Flood&quot;, &quot;Vandalism&quot;, &quot;Theft&quot;, &quot;Other&quot;</td>
+<td>N</td>
+</tr>
+<tr>
+<td>claimNumber</td>
+<td>The claim number as noted by the carrier</td>
+<td>N</td>
+</tr>
+<tr>
+<td>dateOfLoss</td>
+<td>The date the loss occurred</td>
+<td>N</td>
+</tr>
+<tr>
+<td>deductible</td>
+<td>The current deductible for the payoff</td>
+<td>N</td>
+</tr>
+<tr>
+<td>financeType</td>
+<td>Either &quot;Retail&quot; or &quot;Lease&quot;</td>
+<td>N</td>
+</tr>
+<tr>
+<td>insurerType</td>
+<td>Either &quot;First Party&quot; or &quot;Third Party&quot;</td>
+<td>N</td>
+</tr>
+<tr>
+<td>lenderName</td>
+<td>The lender&#39;s name</td>
+<td>N</td>
+</tr>
+<tr>
+<td>odometer</td>
+<td>The mileage on the vehicle associated with the claim</td>
+<td>N</td>
+</tr>
+<tr>
+<td>ownersName</td>
+<td>The vehicle owner&#39;s name</td>
+<td>N</td>
+</tr>
+<tr>
+<td>ownersPhoneNumber</td>
+<td>The vehicle owner&#39;s phone number</td>
+<td>N</td>
+</tr>
+<tr>
+<td>ownersRetained</td>
+<td>Whether the owner is retaining the vehicle (boolean)</td>
+<td>N</td>
+</tr>
+<tr>
+<td>ownersStreetAddress</td>
+<td>The full address of the vehicle owner</td>
+<td>N</td>
+</tr>
+<tr>
+<td>settlementAmount</td>
+<td>The settlement amount for the claim</td>
+<td>N</td>
+</tr>
+<tr>
+<td>titleRemittanceAddress</td>
+<td>The full address that the vehicle title should be sent to</td>
+<td>N</td>
+</tr>
+<tr>
+<td>vehicleLocation</td>
+<td>The full address where the vehicle is located, if different from the titleRemittanceAddress</td>
+<td>N</td>
+</tr>
+<tr>
+<td>vin</td>
+<td>The Vehicle Identification Number for the vehicle on the claim</td>
+<td>N</td>
+</tr>
+</tbody></table>
+<h2 id='search-claims'>Search Claims</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Search Claims response body:</p>
 </blockquote>
+
+<p>Status: <code>200</code></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+  </span><span class="nl">"claims"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="err">...claim</span><span class="w"> </span><span class="err">information</span><span class="w">
+  </span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
+<p>This route allows for searching our claims database for records. This route can return multiple claims in certain scenarios.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code>GET https://.lossexpress.com/claims</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>vin</td>
+<td>Vehicle Identification Number to search by</td>
+</tr>
+<tr>
+<td>claimNumber</td>
+<td>Claim number to search by (case insensitive)</td>
+</tr>
+</tbody></table>
+<h1 id='documents'>Documents</h1><h2 id='add-document-to-claim'>Add Document to Claim</h2><h1 id='payoff-requests'>Payoff Requests</h1><h2 id='create-payoff-request'>Create Payoff Request</h2>
+<p>This route will create a payoff request on a claim. The request will fail when:</p>
+
+<ul>
+<li>IF documents with type <code>settlement breakdown</code> and <code>valuation report</code> are not available (or a document with type <code>settlement breakdown &amp; valuation report</code>)</li>
+</ul>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://.lossexpress.com/claims/{claimId}/payoff-request</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1328,8 +1475,142 @@ would appear as <code>undefined</code> when parsed.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-payoff-request'>Cancel Payoff Request</h2>
+<p>This route will cancel a payoff request on a claim. This route will return an error if a payoff request has not been added on a claim yet.</p>
+
+<p>This route will not return an error if a payoff request has been previously cancelled or completed.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>DELETE https://.lossexpress.com/claims/{claimId}/payoff-request</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
+</tr>
+</tbody></table>
+<h1 id='letter-of-guarantee-requests'>Letter of Guarantee Requests</h1><h2 id='create-letter-of-guarantee-request'>Create Letter of Guarantee Request</h2>
+<p>This route will create a letter of guarantee request on a claim. The letter of guarantee request can be added at any time, but will fail when:</p>
+
+<ul>
+<li>IF documents with type <code>settlement breakdown</code> and <code>valuation report</code> are not available (or a document with type <code>settlement breakdown &amp; valuation report</code>)</li>
+</ul>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST https://.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-letter-of-guarantee-request'>Cancel Letter of Guarantee Request</h2>
+<p>This route will cancel a letter of guarantee request on a claim. This route will return an error if a letter of guarantee request has not been added on a claim yet.</p>
+
+<p>This route will not return an error if a letter of guarantee request has been previously cancelled or completed.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>DELETE https://.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
+</tr>
+</tbody></table>
+<h1 id='direct-messages'>Direct Messages</h1><h2 id='create-direct-message'>Create Direct Message</h2>
+<p>This route allows for sending a direct message to our Claim Specialists.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST https://.lossexpress.com/claims/{claimId}/direct-messages</code></p>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
+</tr>
+</tbody></table>
+<h3 id='request-body-3'>Request Body</h3>
+<p>This route accepts a JSON payload of an object comprising of:</p>
+
+<table><thead>
+<tr>
+<th>Body Parameter</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>The direct message to be sent to LossExpress</td>
+<td>Y</td>
+</tr>
+</tbody></table>
+<h1 id='settlement-counter'>Settlement Counter</h1><h2 id='accept-or-dispute-counter'>Accept or Dispute Counter</h2>
+<p>This route allows for either accepting or disputing a settlement counter presented by a lender.</p>
+
+<p>To accept a counter, you must send a new settlement breakdown document. To dispute a counter, you must set <code>dispute</code> to true and provide a <code>reasonForDispute</code>.</p>
+
+<p>This route will throw an error if there are no settlement counters.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>POST https://.lossexpress.com/claims/{claimId}/settlement-counter</code></p>
+<h3 id='url-parameters-8'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
+</tr>
+</tbody></table>
+<h3 id='request-body-4'>Request Body</h3>
+<p>This route accepts a JSON payload of an object comprising of:</p>
+
+<table><thead>
+<tr>
+<th>Body Parameter</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dispute</td>
+<td>True if it should be disputed, false otherwise (boolean)</td>
+<td>Y if dispute</td>
+</tr>
+<tr>
+<td>settlementBreakdown</td>
+<td></td>
+<td>Y if not dispute</td>
+</tr>
+<tr>
+<td>reasonForDispute</td>
+<td>Message containing the reason for dispute</td>
+<td>Y if dispute</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
