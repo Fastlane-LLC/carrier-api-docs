@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>LossExpress Carrier API</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -282,8 +282,8 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+    <link href="stylesheets/screen-bcd85f94.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-eecc67b3.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-e033bdd3.js"></script>
 
     <script>
@@ -291,7 +291,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -299,13 +299,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-        </div>
+      <img src="images/logo-142da6b8.png" class="logo" alt="" />
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -316,12 +310,81 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#activity-feed" class="toc-h1 toc-link" data-title="Activity Feed">Activity Feed</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#activities" class="toc-h2 toc-link" data-title="Activities">Activities</a>
+                  </li>
+                  <li>
+                    <a href="#fetch-activities" class="toc-h2 toc-link" data-title="Fetch Activities">Fetch Activities</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#activity-types" class="toc-h1 toc-link" data-title="Activity Types">Activity Types</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-of-types" class="toc-h2 toc-link" data-title="List of Types">List of Types</a>
+                  </li>
+                  <li>
+                    <a href="#account-number-viewed" class="toc-h2 toc-link" data-title="account-number-viewed">account-number-viewed</a>
+                  </li>
+                  <li>
+                    <a href="#call-made" class="toc-h2 toc-link" data-title="call-made">call-made</a>
+                  </li>
+                  <li>
+                    <a href="#claim-created" class="toc-h2 toc-link" data-title="claim-created">claim-created</a>
+                  </li>
+                  <li>
+                    <a href="#claim-updated" class="toc-h2 toc-link" data-title="claim-updated">claim-updated</a>
+                  </li>
+                  <li>
+                    <a href="#direct-message-added" class="toc-h2 toc-link" data-title="direct-message-added">direct-message-added</a>
+                  </li>
+                  <li>
+                    <a href="#document-added" class="toc-h2 toc-link" data-title="document-added">document-added</a>
+                  </li>
+                  <li>
+                    <a href="#document-sent-to-lender" class="toc-h2 toc-link" data-title="document-sent-to-lender">document-sent-to-lender</a>
+                  </li>
+                  <li>
+                    <a href="#letter-of-guarantee-added" class="toc-h2 toc-link" data-title="letter-of-guarantee-added">letter-of-guarantee-added</a>
+                  </li>
+                  <li>
+                    <a href="#letter-of-guarantee-request-created" class="toc-h2 toc-link" data-title="letter-of-guarantee-request-created">letter-of-guarantee-request-created</a>
+                  </li>
+                  <li>
+                    <a href="#payoff-data-added" class="toc-h2 toc-link" data-title="payoff-data-added">payoff-data-added</a>
+                  </li>
+                  <li>
+                    <a href="#payoff-request-created" class="toc-h2 toc-link" data-title="payoff-request-created">payoff-request-created</a>
+                  </li>
+                  <li>
+                    <a href="#settlement-counter-added" class="toc-h2 toc-link" data-title="settlement-counter-added">settlement-counter-added</a>
+                  </li>
+                  <li>
+                    <a href="#settlement-counter-updated" class="toc-h2 toc-link" data-title="settlement-counter-updated">settlement-counter-updated</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#claims" class="toc-h1 toc-link" data-title="Claims">Claims</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#fetch-claim" class="toc-h2 toc-link" data-title="Fetch Claim">Fetch Claim</a>
+                  </li>
+                  <li>
+                    <a href="#create-claim" class="toc-h2 toc-link" data-title="Create Claim">Create Claim</a>
+                  </li>
+                  <li>
+                    <a href="#search-claims" class="toc-h2 toc-link" data-title="Search Claims">Search Claims</a>
                   </li>
                   <li>
                     <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
@@ -335,88 +398,88 @@
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the LossExpress Carrier API! This API is designed for use by insurance carriers interested in triggering processing events within LossExpress and viewing the results of those events.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>When going through the integration process with your organization’s systems and LossExpress, it’s important to keep in mind the idea at the core of the LossExpress product and underlying APIs: we act simply as a conduit of information, from carriers to lenders.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>As a result, we have done our best when building out this API to give the power to make decisions to the carrier (where that power belongs), not ourselves.</p>
 <h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Our Carrier API utilizes a standard OAuth 2.0 Client Credentials flow, where the external server authenticates itself using a provided client ID and client secret and is provided an access token that will be used on every request.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Once a token has been received, every request is expected to have a header that looks like the following:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><code>Authorization: Bearer exampletokenbutreplacewithyourown</code></p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://.lossexpress.com/oauth/token</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>exampletokenbutreplacewithyourown</code> with the access token provided.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='activity-feed'>Activity Feed</h1><h2 id='activities'>Activities</h2>
+<p>LossExpress provides a simple way to view events that have taken place within our system, relevant to an organization’s claims. Our Activity Feed provides access to all scoped activities while allowing for a large variety of filtering options to suit any organization’s needs. One of our core tenants at LossExpress is transparency, so you may find that we provide access to <em>too many</em> activities. Feel free to use only what’s important to your organization!</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>As a general rule, all Activity objects include the following keys:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>createdAt</td>
+<td>GMT timestamp marking when the Activity occured in our system</td>
+</tr>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID given to the claim the Activity occurred on</td>
+</tr>
+<tr>
+<td>type</td>
+<td>A string containing one of the available Activity Types</td>
+</tr>
+<tr>
+<td>claimNumber</td>
+<td>The claim number entered for the claim the Activity occurred on</td>
+</tr>
+<tr>
+<td>data</td>
+<td>An object containing relevant information for the Activity</td>
+</tr>
+<tr>
+<td>hash</td>
+<td>A SHA256 hash uniquely identifying the activity type</td>
+</tr>
+</tbody></table>
+<h2 id='fetch-activities'>Fetch Activities</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>This route returns a paginated set of results that looks like this:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"requestUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/activities?createdBefore=2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="err">...array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">activity</span><span class="w"> </span><span class="err">objects</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalResults"</span><span class="p">:</span><span class="w"> </span><span class="mi">296</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<blockquote>
+<p>Note that the result will return a <code>requestUrl</code> object, which will allow you to perfectly replay the request.</p>
+</blockquote>
+
+<p>This route will allow you to view Activities.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://.lossexpress.com/activities</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -426,21 +489,644 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>types</td>
+<td>all</td>
+<td>A comma separated list of types to view</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>createdBefore</td>
+<td>current time</td>
+<td>Allows for filtering activities to only those that were created before a certain timestamp</td>
+</tr>
+<tr>
+<td>createdAfter</td>
+<td>30 minutes earlier</td>
+<td>Allows for filtering activities to only those that were created after a certain timestamp</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>100</td>
+<td>Sets the size of pages in paginated results. Maximum is currently 500.</td>
+</tr>
+<tr>
+<td>pageNumber</td>
+<td>0</td>
+<td>Sets the zero-indexed page number in paginated results.</td>
+</tr>
+<tr>
+<td>claimId</td>
+<td></td>
+<td>Filters the activities to only contain activities for the specific LossExpress Claim ID.</td>
+</tr>
+<tr>
+<td>hash</td>
+<td></td>
+<td>Show activity types starting from when the hash&#39;s activity and moving into the future</td>
 </tr>
 </tbody></table>
+<h1 id='activity-types'>Activity Types</h1><h2 id='list-of-types'>List of Types</h2>
+<p>Below is a list of Activity Types that will be available within the Activity Feed:</p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Will appear when...</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>account-number-viewed</td>
+<td>Account number is viewed</td>
+</tr>
+<tr>
+<td>call-made</td>
+<td>A call is made by LossExpress</td>
+</tr>
+<tr>
+<td>claim-created</td>
+<td>A claim is originally created</td>
+</tr>
+<tr>
+<td>claim-updated</td>
+<td>A claim&#39;s primary information is updated</td>
+</tr>
+<tr>
+<td>direct-message-added</td>
+<td>A direct message is added to a claim</td>
+</tr>
+<tr>
+<td>document-added</td>
+<td>A document is added to a claim</td>
+</tr>
+<tr>
+<td>document-sent-to-lender</td>
+<td>A document is sent to a lender</td>
+</tr>
+<tr>
+<td>letter-of-guarantee-added</td>
+<td>A letter of guarantee is added to a claim</td>
+</tr>
+<tr>
+<td>letter-of-guarantee-request-created</td>
+<td>A letter of guarantee request is created on a claim</td>
+</tr>
+<tr>
+<td>payoff-data-added</td>
+<td>Payoff information is added to a claim</td>
+</tr>
+<tr>
+<td>payoff-request-created</td>
+<td>A payoff request is created on a claim</td>
+</tr>
+<tr>
+<td>settlement-counter-added</td>
+<td>A lender adds a counter to the proposed settlement amount</td>
+</tr>
+<tr>
+<td>settlement-counter-updated</td>
+<td>The settlement counter is either accepted or disputed by the carrier</td>
+</tr>
+</tbody></table>
+<h2 id='account-number-viewed'>account-number-viewed</h2>
+<blockquote>
+<p>account-number-viewed example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account-number-viewed"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"viewedByLossExpress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type will appear in the feed whenever an account number is viewed by someone on LossExpress.</p>
+<h2 id='call-made'>call-made</h2>
+<blockquote>
+<p>call-made example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"call-made"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"callLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">minutes</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type will appear in the feed whenever a call was made on behalf of the carrier by LossExpress.</p>
+<h2 id='claim-created'>claim-created</h2>
+<blockquote>
+<p>claim-created example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"claim-created"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-AN"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adjusterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mike Mclaren"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adjusterEmailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mike@lossexpress.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adjusterPhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+13332225555"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"causeOfLoss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fire"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dateOfLoss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-20"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deductible"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"financeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retail"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"insurerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Party"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lenderName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Lender"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lenderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"odometer"</span><span class="p">:</span><span class="w"> </span><span class="mi">39993</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ownersName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Owner"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ownersPhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+12223334444"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ownerRetained"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ownersStreetAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12200 Test Avenue Dallas TX 75204"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settlementAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5553</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"titleRemittanceAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000 Main Street Dallas TX 75204"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"make"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Car"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2034</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"vehicleLocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1200 Main Street Dallas TX 75204"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1N4AL3AP8JC231503"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type will appear in the feed whenever a claim is created in our system by a carrier. This activity will contain in its data all claim information that had
+been passed on create along with Make/Model/Year information for the VIN passed, if available. Any information not sent on creation will not appear in the data object and
+would appear as <code>undefined</code> when parsed.</p>
+
+<p>If desired, we do give carriers the ability to not have account numbers added to this event type for security purposes.</p>
+
+<aside class="notice">For more information regarding the formats/types passed in the <code>data</code> object, please see the Create Claim route.</aside>
+<h2 id='claim-updated'>claim-updated</h2>
+<blockquote>
+<p>claim-updated example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"claim-updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">contains</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">updated</span><span class="w"> </span><span class="err">information</span><span class="w">
+      </span><span class="nl">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-AN1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">contains</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">information</span><span class="w"> </span><span class="err">just</span><span class="w"> </span><span class="err">prior</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">update</span><span class="w">
+      </span><span class="nl">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-AN"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type will appear in the feed whenever <em>primary claim information</em> is updated. In LossExpress, we define primary claim information as any piece of data that can be sent in the update or create claim routes.</p>
+
+<p>Note that this activity type could be triggered by actions made by LossExpress. Some examples that could cause LossExpress to trigger this activity type:</p>
+
+<ul>
+<li>Account number was empty or incorrect, so was updated when talking to the lender.</li>
+<li>Finance type was set to Retail but was actually a Lease.</li>
+<li>Lender name was incorrect or updated.</li>
+</ul>
+
+<aside class="warning">This activity type will not fire for any claims that have had no activity for two weeks.</aside>
+<h2 id='direct-message-added'>direct-message-added</h2>
+<blockquote>
+<p>direct-message-added example object (sent by LossExpress)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct-message-added"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"sentByLossExpress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Settlement amount appears to differ from documents. Please update."</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>direct-message-added example object (sent by carrier user)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"direct-message-added"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"sentByLossExpress"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The LoG looks to have the wrong settlement amount, please get an LoG with the proper amount. Thanks!"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sentBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Name"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type will appear in the feed whenever a direct message is added to a claim, either by LossExpress or by a carrier user.</p>
+<h2 id='document-added'>document-added</h2>
+<blockquote>
+<p>document-added example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document-added"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"settlement breakdown"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type will appear in the feed whenever a document has been added to a claim.</p>
+
+<aside class="warning">Letters of Guarantee added to the claim will not trigger this activity type.</aside>
+<h2 id='document-sent-to-lender'>document-sent-to-lender</h2>
+<blockquote>
+<p>document-sent-to-lender example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document-sent-to-lender"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type is added to the feed whenever a document is sent by LossExpress to the lender for a particular claim. The <code>documentUrl</code> contains a link to the document that was sent to the lender.</p>
+<h2 id='letter-of-guarantee-added'>letter-of-guarantee-added</h2>
+<blockquote>
+<p>letter-of-guarantee-added example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"letter-of-guarantee-added"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type is added to the feed whenever a letter of guarantee is added to a claim. The <code>documentUrl</code> contains a link to the letter of guarantee that was received.</p>
+
+<aside class="warning">This activity could be added to the feed even if a letter of guarantee request wasn't created in LossExpress. In those scenarios, a letter of guarantee request will be automatically created at the same time as the letter of guarantee is added to the claim.</aside>
+<h2 id='letter-of-guarantee-request-created'>letter-of-guarantee-request-created</h2>
+<blockquote>
+<p>letter-of-guarantee-request-created example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"letter-of-guarantee-request-created"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"estimatedResponseTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-20T22:03:09.598Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type is added to the feed whenever a letter of guarantee request is created for a claim.</p>
+
+<p>Note that although we <em>typically</em> request letters of guarantee whenever we reach out to a lender, we do not follow-up on the status of letters of guarantee nor can we absolutely guarantee that a letter of guarantee will be added to a claim unless a letter of guarantee request is created on a claim.</p>
+
+<aside class="warning"><code>estimatedResponseTime</code> may not exist on every activity for this type, and is merely an estimate based on _prior_ letter of guarantee request response times for that lender.</aside>
+<h2 id='payoff-data-added'>payoff-data-added</h2>
+<blockquote>
+<p>payoff-data-added example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payoff-data-added"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"payoffAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10222.33</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"perDiem"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"validThroughDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-18T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remittanceInformation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"standard"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"makeCheckPayableTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALLY FINANCIAL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATTN LINE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"streetAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000 Main Street"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"streetAddress2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ste. 500"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dallas"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75204"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"overnight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"makeCheckPayableTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALLY FINANCIAL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATTN LINE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"streetAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000 Main Street"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"streetAddress2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ste. 500"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dallas"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75204"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type is added to the feed whenever payoff data is added to a claim.</p>
+
+<aside class="warning">This activity may be called multiple times in the claim and may not contain all information. Only information changed or added will be available in this activity type.</aside>
+<h2 id='payoff-request-created'>payoff-request-created</h2>
+<blockquote>
+<p>payoff-request-created example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payoff-request-created"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type is added to the feed whenever a payoff request is created on a particular claim.</p>
+<h2 id='settlement-counter-added'>settlement-counter-added</h2>
+<blockquote>
+<p>settlement-counter-added example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"settlement-counter-added"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"missing options"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type is added to the feed whenever a settlement counter is added to a claim by a lender. Typically, this comes with a document that can be accessed via the <code>documentUrl</code>.</p>
+<h2 id='settlement-counter-updated'>settlement-counter-updated</h2>
+<blockquote>
+<p>settlement-counter-updated example object (dispute)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"settlement-counter-added"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"disputed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reasonForDispute"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vehicle is not missing any options, verified in person."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>settlement-counter-updated example object (accepted)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"settlement-counter-added"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"disputed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type is added to the feed whenever a settlement counter is either accepted or disputed by the carrier. <code>documentUrl</code> will contain a link to the settlment breakdown passed to the lender with the new settlement amount.</p>
+<h1 id='claims'>Claims</h1>
+<blockquote>
+<p>Example Claim Object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-AN"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"adjusterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mike Mclaren"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"adjusterEmailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mike@lossexpress.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"adjusterPhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+13332225555"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"causeOfLoss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fire"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dateOfLoss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-20"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"deductible"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"settlement breakdown &amp; valuation report"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"financeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retail"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"insurerType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Party"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lenderName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Lender"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lenderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"letterOfGuaranteeRequest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"odometer"</span><span class="p">:</span><span class="w"> </span><span class="mi">39993</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownersName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Owner"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownersPhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+12223334444"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownerRetained"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ownersStreetAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12200 Test Avenue Dallas TX 75204"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payoffData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payoffAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10222.33</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"perDiem"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"validThroughDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-18T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remittanceInformation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"standard"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"makeCheckPayableTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALLY FINANCIAL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATTN LINE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"streetAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000 Main Street"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"streetAddress2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ste. 500"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dallas"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75204"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"overnight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"makeCheckPayableTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALLY FINANCIAL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATTN LINE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"streetAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000 Main Street"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"streetAddress2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ste. 500"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dallas"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75204"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"settlementAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5553</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"titleRemittanceAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000 Main Street Dallas TX 75204"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"make"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Car"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2034</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"vehicleLocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1200 Main Street Dallas TX 75204"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1N4AL3AP8JC231503"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The routes in the section are scoped specifically to claims. Our Carrier API provides a couple ways to search and fetch claim information on top of the ability to create claims.</p>
+
+<p>The Claim object itself contains the following keys:</p>
+
+<table><thead>
+<tr>
+<th>Object Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountNumber</td>
+<td>The customer&#39;s account number for the loan associated with the claim</td>
+</tr>
+<tr>
+<td>adjusterName</td>
+<td>The primary adjuster for the claim</td>
+</tr>
+<tr>
+<td>adjusterEmailAddress</td>
+<td>The email address associated with the primary adjuster for the claim</td>
+</tr>
+<tr>
+<td>adjusterPhoneNumber</td>
+<td>The phone number associated with the primary adjuster for the claim</td>
+</tr>
+<tr>
+<td>causeOfLoss</td>
+<td>The cause of loss listed on the claim. These causes can be one of the following: &quot;Single-Vehicle Collision&quot;, &quot;Multi-Vehicle Collision&quot;, &quot;Wind/Hail&quot;, &quot;Fire&quot;, &quot;Flood&quot;, &quot;Vandalism&quot;, &quot;Theft&quot;, &quot;Other&quot;</td>
+</tr>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
+</tr>
+<tr>
+<td>claimNumber</td>
+<td>The claim number as noted by the carrier</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>The timestamp the claim was created in the system</td>
+</tr>
+<tr>
+<td>dateOfLoss</td>
+<td>The date the loss occurred</td>
+</tr>
+<tr>
+<td>deductible</td>
+<td>The current deductible for the payoff</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>An array of Document objects</td>
+</tr>
+<tr>
+<td>financeType</td>
+<td>Either &quot;Retail&quot; or &quot;Lease&quot;</td>
+</tr>
+<tr>
+<td>insurerType</td>
+<td>Either &quot;First Party&quot; or &quot;Third Party&quot;</td>
+</tr>
+<tr>
+<td>lenderName</td>
+<td>The lender&#39;s name</td>
+</tr>
+<tr>
+<td>lenderId</td>
+<td>The LossExpress UUID associated with that lender, if that lender exists in our lender database</td>
+</tr>
+<tr>
+<td>letterOfGuaranteeRequest</td>
+<td>A letter of guarantee request object, containing basic information about the letter of guarantee request</td>
+</tr>
+<tr>
+<td>odometer</td>
+<td>The mileage on the vehicle associated with the claim</td>
+</tr>
+<tr>
+<td>ownersName</td>
+<td>The vehicle owner&#39;s name</td>
+</tr>
+<tr>
+<td>ownersPhoneNumber</td>
+<td>The vehicle owner&#39;s phone number</td>
+</tr>
+<tr>
+<td>ownersRetained</td>
+<td>Whether the owner is retaining the vehicle (boolean)</td>
+</tr>
+<tr>
+<td>ownersStreetAddress</td>
+<td>The full address of the vehicle owner</td>
+</tr>
+<tr>
+<td>payoffData</td>
+<td>A Payoff Data object</td>
+</tr>
+<tr>
+<td>settlementAmount</td>
+<td>The settlement amount for the claim</td>
+</tr>
+<tr>
+<td>titleRemittanceAddress</td>
+<td>The full address that the vehicle title should be sent to</td>
+</tr>
+<tr>
+<td>updatedAt</td>
+<td>The timestamp the claim was last updated; this can happen in a number of scenarios and is not recommended to be used to track claim changes - please use the activity feed instead</td>
+</tr>
+<tr>
+<td>vehicle</td>
+<td>A vehicle object containing the make, model, and year of the vehicle, if available</td>
+</tr>
+<tr>
+<td>vehicleLocation</td>
+<td>The full address where the vehicle is located, if different from the titleRemittanceAddress</td>
+</tr>
+<tr>
+<td>vin</td>
+<td>The Vehicle Identification Number for the vehicle on the claim</td>
+</tr>
+</tbody></table>
+<h2 id='fetch-claim'>Fetch Claim</h2>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"claim"</span><span class="p">:</span><span class="w"> </span><span class="err">...claim</span><span class="w"> </span><span class="err">object</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/claims/c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This route allows for access to a claim&#39;s data in one location.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://.lossexpress.com/claims/{claimId}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
+</tr>
+</tbody></table>
+<h2 id='create-claim'>Create Claim</h2><h2 id='search-claims'>Search Claims</h2><h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -469,9 +1155,9 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -508,9 +1194,9 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -583,12 +1269,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-          </div>
       </div>
     </div>
   </body>
