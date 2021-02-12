@@ -361,6 +361,9 @@
                     <a href="#letter-of-guarantee-request-created" class="toc-h2 toc-link" data-title="letter-of-guarantee-request-created">letter-of-guarantee-request-created</a>
                   </li>
                   <li>
+                    <a href="#payment-sent" class="toc-h2 toc-link" data-title="payment-sent">payment-sent</a>
+                  </li>
+                  <li>
                     <a href="#payoff-data-added" class="toc-h2 toc-link" data-title="payoff-data-added">payoff-data-added</a>
                   </li>
                   <li>
@@ -415,6 +418,14 @@
                   </li>
                   <li>
                     <a href="#cancel-letter-of-guarantee-request" class="toc-h2 toc-link" data-title="Cancel Letter of Guarantee Request">Cancel Letter of Guarantee Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#payments" class="toc-h1 toc-link" data-title="Payments">Payments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#acknowledge-payment-sent" class="toc-h2 toc-link" data-title="Acknowledge Payment Sent">Acknowledge Payment Sent</a>
                   </li>
               </ul>
           </li>
@@ -600,6 +611,10 @@ You must replace <code>exampletokenbutreplacewithyourown</code> with the access 
 <tr>
 <td>letter-of-guarantee-request-created</td>
 <td>A letter of guarantee request is created on a claim</td>
+</tr>
+<tr>
+<td>payment-sent</td>
+<td>Payment has been sent for a claim</td>
 </tr>
 <tr>
 <td>payoff-data-added</td>
@@ -832,6 +847,34 @@ would appear as <code>undefined</code> when parsed.</p>
 <p>Note that although we <em>typically</em> request letters of guarantee whenever we reach out to a lender, we do not follow-up on the status of letters of guarantee nor can we absolutely guarantee that a letter of guarantee will be added to a claim unless a letter of guarantee request is created on a claim.</p>
 
 <aside class="warning"><code>estimatedResponseTime</code> may not exist on every activity for this type, and is merely an estimate based on _prior_ letter of guarantee request response times for that lender.</aside>
+<h2 id='payment-sent'>payment-sent</h2>
+<blockquote>
+<p>payment-sent example object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payment-sent"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"checkAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sentAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sentTo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"streetAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000 Main Street"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"streetAddress2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ste. 500"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dallas"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TX"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75204"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"sentVia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USPS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trackingNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLENUMBER"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This activity type is added to the feed whenever acknowledgement that payment has been sent has been added to LossExpress; this can be trigged by either the carrier or our payment processing partner, if that partner is enabled in the carrier&#39;s system and set-up properly in LossExpress.</p>
+
+<aside class="warning"><code>sentTo</code> and <code>trackingNumber</code> may not exist on every activity for this type.</aside>
 <h2 id='payoff-data-added'>payoff-data-added</h2>
 <blockquote>
 <p>payoff-data-added example object</p>
@@ -1449,6 +1492,14 @@ would appear as <code>undefined</code> when parsed.</p>
 </tr>
 </tbody></table>
 <h1 id='direct-messages'>Direct Messages</h1><h2 id='create-direct-message'>Create Direct Message</h2>
+<blockquote>
+<p>Example Response Body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test message."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <p>This route allows for sending a direct message to our Claim Specialists.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://exapi.lossexpress.com/claims/{claimId}/direct-messages</code></p>
@@ -1542,7 +1593,61 @@ would appear as <code>undefined</code> when parsed.</p>
 <td>The LossExpress UUID associated with the claim</td>
 </tr>
 </tbody></table>
+<h1 id='payments'>Payments</h1><h2 id='acknowledge-payment-sent'>Acknowledge Payment Sent</h2>
+<p>We offer support for carriers to give us acknowledgement that payment has been sent to the lender. Enabling this allows us to more effectively answer questions directed at us by lenders regarding payment status. Additionally, this step can be skipped if an integration with our designated payment processing partner has been enabled.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://exapi.lossexpress.com/claims/{claimId}/payoff-sent</code></p>
+<h3 id='request-body'>Request Body</h3>
+<p>This route accepts a JSON payload of an object comprising of:</p>
+
+<table><thead>
+<tr>
+<th>Body Parameter</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sentTo</td>
+<td>An object containing streetAddress, streetAddress2, city, state, and zipCode keys</td>
+<td>N</td>
+</tr>
+<tr>
+<td>trackingNumber</td>
+<td>A string containing the relevant tracking number for the check</td>
+<td>N</td>
+</tr>
+<tr>
+<td>sentVia</td>
+<td>A string describing how the check was sent; mailing provider if sent via mail</td>
+<td>N</td>
+</tr>
+<tr>
+<td>sentAt</td>
+<td>A JSON date that the payment was sent</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>checkAmount</td>
+<td>An integer describing the amount sent</td>
+<td>Y</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">Although fields are not required, our Claims Specialist teams request that you pass as much information as available to your systems so that they may better serve your organization.</aside>
 <h1 id='settlement-counter'>Settlement Counter</h1><h2 id='accept-or-dispute-counter'>Accept or Dispute Counter</h2>
+<blockquote>
+<p>Example Response Body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>This route will throw a <code>404: NOT FOUND</code> if there are no settlement counters present on the claim.</p>
+</blockquote>
+
 <p>This route allows for either accepting or disputing a settlement counter presented by a lender.</p>
 
 <p>To accept a counter, you must send a new settlement breakdown document. To dispute a counter, you must set <code>dispute</code> to true and provide a <code>reasonForDispute</code>.</p>
