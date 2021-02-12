@@ -400,17 +400,6 @@
               </ul>
           </li>
           <li>
-            <a href="#payoff-requests" class="toc-h1 toc-link" data-title="Payoff Requests">Payoff Requests</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#create-payoff-request" class="toc-h2 toc-link" data-title="Create Payoff Request">Create Payoff Request</a>
-                  </li>
-                  <li>
-                    <a href="#cancel-payoff-request" class="toc-h2 toc-link" data-title="Cancel Payoff Request">Cancel Payoff Request</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#letter-of-guarantee-requests" class="toc-h1 toc-link" data-title="Letter of Guarantee Requests">Letter of Guarantee Requests</a>
               <ul class="toc-list-h2">
                   <li>
@@ -458,7 +447,7 @@
 
 <p><code>Authorization: Bearer exampletokenbutreplacewithyourown</code></p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://.lossexpress.com/oauth/token</code></p>
+<p><code>POST https://exapi.lossexpress.com/oauth/token</code></p>
 
 <aside class="notice">
 You must replace <code>exampletokenbutreplacewithyourown</code> with the access token provided.
@@ -504,7 +493,7 @@ You must replace <code>exampletokenbutreplacewithyourown</code> with the access 
 <p>This route returns a paginated set of results that looks like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"requestUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/activities?createdBefore=2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://exapi.lossexpress.com/activities?createdBefore=2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="err">...array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">activity</span><span class="w"> </span><span class="err">objects</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -521,8 +510,8 @@ You must replace <code>exampletokenbutreplacewithyourown</code> with the access 
 </blockquote>
 
 <p>This route will allow you to view Activities.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://.lossexpress.com/activities</code></p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://exapi.lossexpress.com/activities</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -782,7 +771,7 @@ would appear as <code>undefined</code> when parsed.</p>
   </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"settlement breakdown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://exapi.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -800,7 +789,7 @@ would appear as <code>undefined</code> when parsed.</p>
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document-sent-to-lender"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://exapi.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -816,7 +805,7 @@ would appear as <code>undefined</code> when parsed.</p>
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"letter-of-guarantee-added"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://exapi.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -909,7 +898,7 @@ would appear as <code>undefined</code> when parsed.</p>
   </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"missing options"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://exapi.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -941,7 +930,7 @@ would appear as <code>undefined</code> when parsed.</p>
   </span><span class="nl">"claimNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE3"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"disputed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://exapi.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -965,7 +954,7 @@ would appear as <code>undefined</code> when parsed.</p>
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://exapi.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"settlement breakdown &amp; valuation report"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -976,7 +965,7 @@ would appear as <code>undefined</code> when parsed.</p>
   </span><span class="nl">"letterOfGuaranteeRequest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documentUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://exapi.lossexpress.com/documents/555ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"odometer"</span><span class="p">:</span><span class="w"> </span><span class="mi">39993</span><span class="p">,</span><span class="w">
   </span><span class="nl">"ownersName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Owner"</span><span class="p">,</span><span class="w">
@@ -1151,12 +1140,12 @@ would appear as <code>undefined</code> when parsed.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"claim"</span><span class="p">:</span><span class="w"> </span><span class="err">...claim</span><span class="w"> </span><span class="err">object</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"requestUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://.lossexpress.com/claims/c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
+  </span><span class="nl">"requestUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://exapi.lossexpress.com/claims/c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This route allows for access to a claim&#39;s data in one location.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://.lossexpress.com/claims/{claimId}</code></p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://exapi.lossexpress.com/claims/{claimId}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1180,8 +1169,8 @@ would appear as <code>undefined</code> when parsed.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This route creates a claim in LossExpress, which can be used to generate requests. Please note that our billing may currently or in the future consider all claims in our system, so be sure to only add claims that will eventually be worked on by us to avoid excess charges.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://.lossexpress.com/claims</code></p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://exapi.lossexpress.com/claims</code></p>
 <h3 id='request-body'>Request Body</h3>
 <p>This route accepts a JSON payload of an object comprising of:</p>
 
@@ -1303,8 +1292,8 @@ would appear as <code>undefined</code> when parsed.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This route allows for updating a claim. It is recommended that you only pass in data that has been changed, as opposed to a full object payload. This is recommended to reduce the size and complexity of <code>claim-updated</code> activities.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>PUT https://.lossexpress.com/claims/{claimId}</code></p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PUT https://exapi.lossexpress.com/claims/{claimId}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1441,9 +1430,9 @@ would appear as <code>undefined</code> when parsed.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This route allows for searching our claims database for records. This route can return multiple claims in certain scenarios.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET https://.lossexpress.com/claims</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://exapi.lossexpress.com/claims</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameters</th>
@@ -1459,53 +1448,15 @@ would appear as <code>undefined</code> when parsed.</p>
 <td>Claim number to search by (case insensitive)</td>
 </tr>
 </tbody></table>
-<h1 id='documents'>Documents</h1><h2 id='add-document-to-claim'>Add Document to Claim</h2><h1 id='payoff-requests'>Payoff Requests</h1><h2 id='create-payoff-request'>Create Payoff Request</h2>
-<p>This route will create a payoff request on a claim. The request will fail when:</p>
-
-<ul>
-<li>IF documents with type <code>settlement breakdown</code> and <code>valuation report</code> are not available (or a document with type <code>settlement breakdown &amp; valuation report</code>)</li>
-</ul>
-<h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST https://.lossexpress.com/claims/{claimId}/payoff-request</code></p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>claimId</td>
-<td>The LossExpress UUID associated with the claim</td>
-</tr>
-</tbody></table>
-<h2 id='cancel-payoff-request'>Cancel Payoff Request</h2>
-<p>This route will cancel a payoff request on a claim. This route will return an error if a payoff request has not been added on a claim yet.</p>
-
-<p>This route will not return an error if a payoff request has been previously cancelled or completed.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
-<p><code>DELETE https://.lossexpress.com/claims/{claimId}/payoff-request</code></p>
-<h3 id='url-parameters-4'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>claimId</td>
-<td>The LossExpress UUID associated with the claim</td>
-</tr>
-</tbody></table>
-<h1 id='letter-of-guarantee-requests'>Letter of Guarantee Requests</h1><h2 id='create-letter-of-guarantee-request'>Create Letter of Guarantee Request</h2>
+<h1 id='documents'>Documents</h1><h2 id='add-document-to-claim'>Add Document to Claim</h2><h1 id='letter-of-guarantee-requests'>Letter of Guarantee Requests</h1><h2 id='create-letter-of-guarantee-request'>Create Letter of Guarantee Request</h2>
 <p>This route will create a letter of guarantee request on a claim. The letter of guarantee request can be added at any time, but will fail when:</p>
 
 <ul>
 <li>IF documents with type <code>settlement breakdown</code> and <code>valuation report</code> are not available (or a document with type <code>settlement breakdown &amp; valuation report</code>)</li>
 </ul>
-<h3 id='http-request-9'>HTTP Request</h3>
-<p><code>POST https://.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
-<h3 id='url-parameters-5'>URL Parameters</h3>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://exapi.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1521,9 +1472,9 @@ would appear as <code>undefined</code> when parsed.</p>
 <p>This route will cancel a letter of guarantee request on a claim. This route will return an error if a letter of guarantee request has not been added on a claim yet.</p>
 
 <p>This route will not return an error if a letter of guarantee request has been previously cancelled or completed.</p>
-<h3 id='http-request-10'>HTTP Request</h3>
-<p><code>DELETE https://.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
-<h3 id='url-parameters-6'>URL Parameters</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>DELETE https://exapi.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1537,9 +1488,9 @@ would appear as <code>undefined</code> when parsed.</p>
 </tbody></table>
 <h1 id='direct-messages'>Direct Messages</h1><h2 id='create-direct-message'>Create Direct Message</h2>
 <p>This route allows for sending a direct message to our Claim Specialists.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
-<p><code>POST https://.lossexpress.com/claims/{claimId}/direct-messages</code></p>
-<h3 id='url-parameters-7'>URL Parameters</h3>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://exapi.lossexpress.com/claims/{claimId}/direct-messages</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1551,7 +1502,7 @@ would appear as <code>undefined</code> when parsed.</p>
 <td>The LossExpress UUID associated with the claim</td>
 </tr>
 </tbody></table>
-<h3 id='request-body-3'>Request Body</h3>
+<h3 id='request-body'>Request Body</h3>
 <p>This route accepts a JSON payload of an object comprising of:</p>
 
 <table><thead>
@@ -1573,9 +1524,9 @@ would appear as <code>undefined</code> when parsed.</p>
 <p>To accept a counter, you must send a new settlement breakdown document. To dispute a counter, you must set <code>dispute</code> to true and provide a <code>reasonForDispute</code>.</p>
 
 <p>This route will throw an error if there are no settlement counters.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
-<p><code>POST https://.lossexpress.com/claims/{claimId}/settlement-counter</code></p>
-<h3 id='url-parameters-8'>URL Parameters</h3>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://exapi.lossexpress.com/claims/{claimId}/settlement-counter</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1587,7 +1538,7 @@ would appear as <code>undefined</code> when parsed.</p>
 <td>The LossExpress UUID associated with the claim</td>
 </tr>
 </tbody></table>
-<h3 id='request-body-4'>Request Body</h3>
+<h3 id='request-body'>Request Body</h3>
 <p>This route accepts a JSON payload of an object comprising of:</p>
 
 <table><thead>
@@ -1614,11 +1565,7 @@ would appear as <code>undefined</code> when parsed.</p>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<p>Our Carrier API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -1636,31 +1583,19 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- You do not have access to that route.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified information could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a route with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
 <td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
