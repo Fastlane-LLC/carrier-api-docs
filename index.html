@@ -392,6 +392,14 @@
               </ul>
           </li>
           <li>
+            <a href="#direct-messages" class="toc-h1 toc-link" data-title="Direct Messages">Direct Messages</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-direct-message" class="toc-h2 toc-link" data-title="Create Direct Message">Create Direct Message</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#documents" class="toc-h1 toc-link" data-title="Documents">Documents</a>
               <ul class="toc-list-h2">
                   <li>
@@ -407,14 +415,6 @@
                   </li>
                   <li>
                     <a href="#cancel-letter-of-guarantee-request" class="toc-h2 toc-link" data-title="Cancel Letter of Guarantee Request">Cancel Letter of Guarantee Request</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#direct-messages" class="toc-h1 toc-link" data-title="Direct Messages">Direct Messages</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#create-direct-message" class="toc-h2 toc-link" data-title="Create Direct Message">Create Direct Message</a>
                   </li>
               </ul>
           </li>
@@ -1448,44 +1448,6 @@ would appear as <code>undefined</code> when parsed.</p>
 <td>Claim number to search by (case insensitive)</td>
 </tr>
 </tbody></table>
-<h1 id='documents'>Documents</h1><h2 id='add-document-to-claim'>Add Document to Claim</h2><h1 id='letter-of-guarantee-requests'>Letter of Guarantee Requests</h1><h2 id='create-letter-of-guarantee-request'>Create Letter of Guarantee Request</h2>
-<p>This route will create a letter of guarantee request on a claim. The letter of guarantee request can be added at any time, but will fail when:</p>
-
-<ul>
-<li>IF documents with type <code>settlement breakdown</code> and <code>valuation report</code> are not available (or a document with type <code>settlement breakdown &amp; valuation report</code>)</li>
-</ul>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://exapi.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>claimId</td>
-<td>The LossExpress UUID associated with the claim</td>
-</tr>
-</tbody></table>
-<h2 id='cancel-letter-of-guarantee-request'>Cancel Letter of Guarantee Request</h2>
-<p>This route will cancel a letter of guarantee request on a claim. This route will return an error if a letter of guarantee request has not been added on a claim yet.</p>
-
-<p>This route will not return an error if a letter of guarantee request has been previously cancelled or completed.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>DELETE https://exapi.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>claimId</td>
-<td>The LossExpress UUID associated with the claim</td>
-</tr>
-</tbody></table>
 <h1 id='direct-messages'>Direct Messages</h1><h2 id='create-direct-message'>Create Direct Message</h2>
 <p>This route allows for sending a direct message to our Claim Specialists.</p>
 <h3 id='http-request'>HTTP Request</h3>
@@ -1516,6 +1478,68 @@ would appear as <code>undefined</code> when parsed.</p>
 <td>message</td>
 <td>The direct message to be sent to LossExpress</td>
 <td>Y</td>
+</tr>
+</tbody></table>
+<h1 id='documents'>Documents</h1><h2 id='add-document-to-claim'>Add Document to Claim</h2><h1 id='letter-of-guarantee-requests'>Letter of Guarantee Requests</h1><h2 id='create-letter-of-guarantee-request'>Create Letter of Guarantee Request</h2>
+<blockquote>
+<p>Create Letter of Guarantee Request Example Response Body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"turnAroundTimeEstimate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08T22:03:09.598Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>This route will throw a <code>400: BAD REQUEST</code> if it fails due to lack of information on a claim.</p>
+</blockquote>
+
+<p>This route will create a letter of guarantee request on a claim. The letter of guarantee request can be added at any time, but will fail when:</p>
+
+<ul>
+<li>IF documents with type <code>settlement breakdown</code> and <code>valuation report</code> are not available (or a document with type <code>settlement breakdown &amp; valuation report</code>)</li>
+</ul>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://exapi.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-letter-of-guarantee-request'>Cancel Letter of Guarantee Request</h2>
+<blockquote>
+<p>Cancel Letter of Guarantee Request Example Response Body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"claimId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c30ae9da-9222-4de5-81fe-fe1ac590fa0f"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>This route will throw a <code>404: NOT FOUND</code> if a Letter of Guarantee request is not available on the claim.</p>
+</blockquote>
+
+<p>This route will cancel a letter of guarantee request on a claim. This route will return an error if a letter of guarantee request has not been added on a claim yet.</p>
+
+<p>This route will not return an error if a letter of guarantee request has been previously cancelled or completed.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>DELETE https://exapi.lossexpress.com/claims/{claimId}/letter-of-guarantee-request</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>claimId</td>
+<td>The LossExpress UUID associated with the claim</td>
 </tr>
 </tbody></table>
 <h1 id='settlement-counter'>Settlement Counter</h1><h2 id='accept-or-dispute-counter'>Accept or Dispute Counter</h2>
